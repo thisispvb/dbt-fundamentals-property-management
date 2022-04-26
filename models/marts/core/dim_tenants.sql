@@ -19,8 +19,7 @@ final as (
         tenants.notice_date,
 
         tenants.contact_info_id,
-        contact_infos.first_name,
-        contact_infos.last_name,
+        concat(contact_infos.first_name, ' ', contact_infos.last_name) as full_name,
         contact_infos.email_address,
         contact_infos.phone_number,
 
