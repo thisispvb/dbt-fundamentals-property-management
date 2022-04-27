@@ -4,6 +4,10 @@ sources:
   - name: property_management
     database: raw
     schema: property_management
+    freshness:
+      warn_after: { count: 24, period: hour }
+      error_after: { count: 48, period: hour }
+    loaded_at_field: uploaded_at
     tables:
       - name: bank_accounts
       - name: contact_infos
