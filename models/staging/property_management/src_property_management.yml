@@ -21,18 +21,24 @@ sources:
             tests: [unique, not_null]
 
       - name: emails
+        description: Emails source 📧
         columns: 
           - name: id
+            description: Primary key for emails.
             tests: [unique, not_null]
 
       - name: email_delivery_statuses
+        description: Email delivery statuses source ✅
         columns: 
           - name: id
+            description: Primary key for email delivery statuses.
             tests: [unique, not_null]
 
       - name: leases
+        description: Leases source 📄
         columns: 
           - name: id
+            description: Primary key for leases.
             tests: [unique, not_null]
 
       - name: owners
@@ -61,16 +67,22 @@ sources:
             tests: [unique, not_null]
 
       - name: transactions
+        description: Transactions source 💸
         columns: 
           - name: id
+            description: Primary key for transactions.
             tests: [unique, not_null]
 
       - name: units
+        description: Units source 📪
         columns: 
           - name: id
+            description: Primary key for units.
             tests: [unique, not_null]
 
       - name: vendors
+        description: Vendors source 👷‍♂️
         columns: 
           - name: id
+            description: Primary key for vendors.
             tests: [unique, not_null]
