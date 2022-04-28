@@ -29,10 +29,12 @@ tenant_lease_unit as (
 final as (
     select        
         transactions.transaction_id,
+        transactions.type,
         transactions.amount,
         transactions.payer,
         transactions.payee,
-        transactions.created_at
+        transactions.created_at,
+        tenant_lease_unit.unit_id
     from transactions
 
     left join tenant_lease_unit on transactions.payer = tenant_lease_unit.full_name
