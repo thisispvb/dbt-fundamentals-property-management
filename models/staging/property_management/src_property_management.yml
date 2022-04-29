@@ -1,0 +1,88 @@
+version: 2
+
+sources:
+  - name: property_management
+    database: raw
+    schema: property_management
+    freshness:
+      warn_after: { count: 24, period: hour }
+      error_after: { count: 48, period: hour }
+    loaded_at_field: uploaded_at
+    
+    tables:    
+      - name: bank_accounts
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: contact_infos
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: emails
+        description: Emails source 📧
+        columns: 
+          - name: id
+            description: Primary key for emails.
+            tests: [unique, not_null]
+
+      - name: email_delivery_statuses
+        description: Email delivery statuses source ✅
+        columns: 
+          - name: id
+            description: Primary key for email delivery statuses.
+            tests: [unique, not_null]
+
+      - name: leases
+        description: Leases source 📄
+        columns: 
+          - name: id
+            description: Primary key for leases.
+            tests: [unique, not_null]
+
+      - name: owners
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: properties
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: property_owners
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: rental_applications
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: tenants
+        columns: 
+          - name: id
+            tests: [unique, not_null]
+
+      - name: transactions
+        description: Transactions source 💸
+        columns: 
+          - name: id
+            description: Primary key for transactions.
+            tests: [unique, not_null]
+
+      - name: units
+        description: Units source 📪
+        columns: 
+          - name: id
+            description: Primary key for units.
+            tests: [unique, not_null]
+
+      - name: vendors
+        description: Vendors source 👷‍♂️
+        columns: 
+          - name: id
+            description: Primary key for vendors.
+            tests: [unique, not_null]
